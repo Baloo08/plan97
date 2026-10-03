@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Estratégico 2026 | Grupo Guía y Scout 97 Domingo Savio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              purple: '#6b21a8',
+              'purple-light': '#9333ea',
+              'purple-dark': '#3b0764',
+              'purple-subtle': '#f3e8ff',
+              red: '#dc2626',
+              'red-dark': '#991b1b',
+              'red-subtle': '#fee2e2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbars */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 6px; }
+    ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 6px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    
+    .gantt-bar-glow:hover { 
+      filter: drop-shadow(0 4px 10px rgba(107, 33, 168, 0.35)); 
+      transform: translateY(-1px);
+    }
+    .calendar-cell:hover {
+      box-shadow: 0 4px 12px -2px rgba(107, 33, 168, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans selection:bg-purple-600 selection:text-white">
+
+  <header class="bg-slate-950 text-white shadow-xl sticky top-0 z-40 border-b border-purple-900/40 relative overflow-hidden transition-all duration-300" id="main-header">
+    <!-- Ambient glow behind header text -->
+    <div class="absolute -top-24 -left-20 w-80 h-80 bg-purple-700/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-24 -right-20 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div id="header-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-3 relative z-10 transition-all duration-300">
+      <div class="flex items-center justify-between gap-3">
+        <div class="min-w-0 flex-1">
+          <!-- Collapsible badges container -->
+          <div id="header-collapsible-badges" class="transition-all duration-300 ease-in-out overflow-hidden max-h-12 opacity-100">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="text-[11px] uppercase tracking-wider font-extrabold px-3 py-0.5 rounded-full bg-purple-900/80 text-purple-200 border border-purple-700/60 shadow-inner">
+                Grupo Guía y Scout 97 Domingo Savio
+              </span>
+              <span class="text-[11px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full bg-red-950/80 text-red-300 border border-red-700/50">
+                Guadalupe de Cartago
+              </span>
+              <span class="text-xs text-slate-400 font-medium hidden sm:inline">• Marco Temporal: Octubre - Diciembre 2026</span>
+            </div>
+          </div>
+          
+          <h1 id="header-title" class="text-xl sm:text-2xl md:text-3xl font-extrabold font-display tracking-tight text-white transition-all duration-300 truncate">
+            Propuesta Estratégica de Captación y Crecimiento 2026
+          </h1>
+
+          <!-- Collapsible subtitle container -->
+          <div id="header-collapsible-subtitle" class="transition-all duration-300 ease-in-out overflow-hidden max-h-8 opacity-100">
+            <p class="text-xs sm:text-sm text-purple-300 font-medium italic mt-0.5">
+              "Creciendo en Comunidad por Medio del Servicio"
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Top Metrics & Collapse Toggle Button -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div id="header-collapsible-metrics" class="transition-all duration-300 ease-in-out overflow-hidden max-h-24 opacity-100 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm">
+            <div class="bg-slate-900/90 rounded-xl px-3.5 py-2 border border-red-900/50 text-right backdrop-blur-md shadow-sm hidden sm:block">
+              <span class="block text-[10px] uppercase text-red-300 font-bold tracking-wider">Fecha Límite (Deadline)</span>
+              <span class="font-bold text-red-400 text-sm sm:text-base flex items-center justify-end gap-1.5">
+                <svg class="w-4 h-4 inline-block text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                12 Dic 2026
+              </span>
+            </div>
+            <div class="bg-slate-900/90 rounded-xl px-3.5 py-2 border border-purple-800/50 text-right backdrop-blur-md shadow-sm hidden md:block">
+              <span class="block text-[10px] uppercase text-purple-300 font-bold tracking-wider">Meta Total Nuevos</span>
+              <span class="font-extrabold text-white text-sm sm:text-base">31 - 35 Miembros</span>
+            </div>
+          </div>
+
+          <!-- Collapse / Expand Manual Button -->
+          <button id="header-toggle-btn" onclick="toggleHeaderCollapse(true)" class="p-2 sm:px-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-purple-300 hover:text-white border border-purple-800/60 transition shadow-sm flex items-center gap-1.5 text-xs font-semibold backdrop-blur-md" title="Colapsar / Expandir encabezado">
+            <span id="header-toggle-text" class="hidden sm:inline text-[11px]">Colapsar</span>
+            <svg id="header-toggle-icon" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs with Clean SVGs and Dark Header Integration -->
+      <nav id="header-nav" class="flex space-x-1.5 mt-3 sm:mt-4 overflow-x-auto pb-1 scrollbar-none border-t border-slate-800/90 pt-2.5 transition-all duration-300">
+        <button onclick="switchTab('gantt')" id="tab-btn-gantt" class="tab-btn px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center gap-2 shrink-0 bg-purple-600 text-white shadow-md">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+          <span>Cronograma Gantt (10 Semanas)</span>
+        </button>
+        <button onclick="switchTab('calendario')" id="tab-btn-calendario" class="tab-btn px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center gap-2 shrink-0 text-slate-300 hover:text-white hover:bg-slate-800/80">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span>Calendario de Actividades</span>
+        </button>
+        <button onclick="switchTab('burbujas')" id="tab-btn-burbujas" class="tab-btn px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center gap-2 shrink-0 text-slate-300 hover:text-white hover:bg-slate-800/80">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+          </svg>
+          <span>Diagrama de Burbujas</span>
+        </button>
+        <button onclick="switchTab('kpis')" id="tab-btn-kpis" class="tab-btn px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center gap-2 shrink-0 text-slate-300 hover:text-white hover:bg-slate-800/80">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+          </svg>
+          <span>Métricas y Conversión</span>
+        </button>
+        <button onclick="switchTab('resumen')" id="tab-btn-resumen" class="tab-btn px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center gap-2 shrink-0 text-slate-300 hover:text-white hover:bg-slate-800/80">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+          <span>Ejes y Salvaguarda</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <!-- Manada -->
+      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/90 flex items-center gap-3 transition hover:shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-900 border border-purple-200 flex items-center justify-center font-extrabold text-xs shrink-0">
+          MAN
+        </div>
+        <div class="min-w-0 flex-1">
+          <p class="text-[11px] font-bold text-slate-500 uppercase tracking-tight truncate">Manada (7-11)</p>
+          <p class="text-base sm:text-lg font-black text-slate-900 leading-none mt-0.5">+8 a 10</p>
+          <p class="text-[10px] text-purple-800 font-semibold truncate mt-0.5">Lobatos / Lobatas</p>
+        </div>
+      </div>
+      <!-- Tropa -->
+      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/90 flex items-center gap-3 transition hover:shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-purple-800 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs">
+          TRO
+        </div>
+        <div class="min-w-0 flex-1">
+          <p class="text-[11px] font-bold text-slate-500 uppercase tracking-tight truncate">Tropa (11-15)</p>
+          <p class="text-base sm:text-lg font-black text-slate-900 leading-none mt-0.5">+8 a 10</p>
+          <p class="text-[10px] text-purple-900 font-semibold truncate mt-0.5">Nuevos Scouts</p>
+        </div>
+      </div>
+      <!-- Wak -->
+      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-red-200 flex items-center gap-3 transition hover:shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs">
+          WAK
+        </div>
+        <div class="min-w-0 flex-1">
+          <p class="text-[11px] font-bold text-red-700 uppercase tracking-tight truncate">Wak (15-18)</p>
+          <p class="text-base sm:text-lg font-black text-red-700 leading-none mt-0.5">Mín. 5</p>
+          <p class="text-[10px] text-red-900 font-semibold truncate mt-0.5">Promesas Efectivas</p>
+        </div>
+      </div>
+      <!-- Comunidad -->
+      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-red-200 flex items-center gap-3 transition hover:shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-red-800 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs">
+          COM
+        </div>
+        <div class="min-w-0 flex-1">
+          <p class="text-[11px] font-bold text-red-800 uppercase tracking-tight truncate">Comunidad (18-21)</p>
+          <p class="text-base sm:text-lg font-black text-red-800 leading-none mt-0.5">Mín. 5</p>
+          <p class="text-[10px] text-red-950 font-semibold truncate mt-0.5">Nuevos Protagonistas</p>
+        </div>
+      </div>
+      <!-- Adultos -->
+      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-300 flex items-center gap-3 col-span-2 sm:col-span-1 transition hover:shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-purple-300 border border-slate-700 flex items-center justify-center font-extrabold text-xs shrink-0">
+          ADU
+        </div>
+        <div class="min-w-0 flex-1">
+          <p class="text-[11px] font-bold text-slate-700 uppercase tracking-tight truncate">Adultos (+21)</p>
+          <p class="text-base sm:text-lg font-black text-slate-900 leading-none mt-0.5">Mín. 5</p>
+          <p class="text-[10px] text-purple-900 font-semibold truncate mt-0.5">A Salvo del Peligro</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 1: DIAGRAMA DE GANTT (10 SEMANAS)      -->
+    <!-- ========================================== -->
+    <div id="view-gantt" class="tab-view block space-y-4">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 sm:p-6">
+        
+        <!-- Header & Action Filters -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-900 flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-purple-100 text-purple-800">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </span>
+              Cronograma Maestro — Diagrama de Gantt
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">
+              Despliegue operativo semanal desde el 05 de Octubre hasta el cierre de metas el 12 de Diciembre de 2026.
+            </p>
+          </div>
+
+          <!-- Gantt Filters -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-slate-500">Filtrar:</span>
+            <button onclick="filterGantt('all')" class="gantt-filter active px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-700 text-white transition shadow-xs" data-filter="all">Todas</button>
+            <button onclick="filterGantt('institucional')" class="gantt-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="institucional">Educativo & Parroquia</button>
+            <button onclick="filterGantt('experiencia')" class="gantt-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="experiencia">3 Experiencias</button>
+            <button onclick="filterGantt('seguimiento')" class="gantt-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="seguimiento">Seguimiento & Cierre</button>
+          </div>
+        </div>
+
+        <!-- Gantt Visual Timeline with spacious layout preventing text squishing -->
+        <div class="mt-5 overflow-x-auto pb-4">
+          <div class="min-w-[1020px]">
+            
+            <!-- Weeks Header with Dates and Key Milestone Badges -->
+            <div class="grid grid-cols-12 gap-2 text-xs font-semibold text-slate-600 bg-slate-100/80 p-3 rounded-xl mb-3 items-center border border-slate-200">
+              <div class="col-span-4 text-left pl-2 text-slate-800 font-extrabold uppercase tracking-wider text-[11px]">
+                Acción Estratégica & Responsable
+              </div>
+              <div class="col-span-8 grid grid-cols-10 gap-1.5 text-center text-[11px]">
+                <div class="bg-white py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                  <span class="font-extrabold text-slate-800">S1</span>
+                  <div class="text-[9px] text-slate-400 font-normal">05-11 Oct</div>
+                </div>
+                <div class="bg-white py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                  <span class="font-extrabold text-slate-800">S2</span>
+                  <div class="text-[9px] text-slate-400 font-normal">12-18 Oct</div>
+                </div>
+                <div class="bg-white py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                  <span class="font-extrabold text-slate-800">S3</span>
+                  <div class="text-[9px] text-slate-400 font-normal">19-25 Oct</div>
+                </div>
+                <div class="bg-white py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                  <span class="font-extrabold text-slate-800">S4</span>
+                  <div class="text-[9px] text-slate-400 font-normal">26 Oct-01 Nov</div>
+                </div>
+                <!-- S5 Milestone E1 -->
+                <div class="bg-purple-100 text-purple-950 border border-purple-300 py-1.5 rounded-lg font-bold shadow-2xs ring-1 ring-purple-400">
+                  <span class="font-extrabold text-purple-900">S5</span>
+                  <div class="text-[9px] text-purple-800 font-extrabold">E1 (07 Nov)</div>
+                </div>
+                <div class="bg-white py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                  <span class="font-extrabold text-slate-800">S6</span>
+                  <div class="text-[9px] text-slate-400 font-normal">09-15 Nov</div>
+                </div>
+                <div class="bg-white py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                  <span class="font-extrabold text-slate-800">S7</span>
+                  <div class="text-[9px] text-slate-400 font-normal">16-22 Nov</div>
+                </div>
+                <!-- S8 Milestone E2 -->
+                <div class="bg-red-100 text-red-950 border border-red-300 py-1.5 rounded-lg font-bold shadow-2xs ring-1 ring-red-400">
+                  <span class="font-extrabold text-red-900">S8</span>
+                  <div class="text-[9px] text-red-800 font-extrabold">E2 (28 Nov)</div>
+                </div>
+                <!-- S9 Milestone E3 -->
+                <div class="bg-purple-200 text-purple-950 border border-purple-400 py-1.5 rounded-lg font-bold shadow-2xs ring-1 ring-purple-500">
+                  <span class="font-extrabold text-purple-950">S9</span>
+                  <div class="text-[9px] text-purple-900 font-extrabold">E3 (05 Dic)</div>
+                </div>
+                <!-- S10 Deadline -->
+                <div class="bg-red-600 text-white border border-red-700 py-1.5 rounded-lg font-bold shadow-2xs ring-2 ring-red-300">
+                  <span class="font-extrabold">S10</span>
+                  <div class="text-[9px] text-red-100 font-extrabold">12 Dic</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gantt Items with spacious containers and non-cramped typography -->
+            <div id="gantt-rows-container" class="space-y-3 text-xs">
+              
+              <!-- Row 1 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-white hover:bg-slate-50 transition border border-slate-200 shadow-2xs" data-category="institucional">
+                <div class="col-span-4 pr-3">
+                  <div class="font-bold text-slate-900 text-sm leading-snug">Cartas formales & Avisos Parroquia</div>
+                  <div class="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-600 shrink-0"></span>
+                    <span>Resp: Jefatura de Grupo / Comité</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-span-1 h-9 rounded-lg bg-purple-700 text-white text-xs flex flex-col items-center justify-center font-bold shadow-sm gantt-bar-glow cursor-pointer transition" onclick="showItemDetail('S1 (05 al 11 Octubre): Envío formal de cartas a las Direcciones de la Escuela Carlos J. Peralta y Colegio Francisca Carrasco. Inicio de avisos en misas parroquiales y distribución de afiches en comercios.')" title="Semana 1: 05 - 11 Oct">
+                    <span>S1</span>
+                  </div>
+                  <div class="col-span-9"></div>
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-white hover:bg-slate-50 transition border border-slate-200 shadow-2xs" data-category="institucional">
+                <div class="col-span-4 pr-3">
+                  <div class="font-bold text-slate-900 text-sm leading-snug">Activaciones en Escuela y Colegio</div>
+                  <div class="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-600 shrink-0"></span>
+                    <span>Resp: Jorge David Morales (Dirigente Wak)</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-1 col-span-2 h-9 rounded-lg bg-purple-600 text-white text-[11px] flex items-center justify-center font-bold shadow-sm gantt-bar-glow cursor-pointer px-2.5 text-center transition" onclick="showItemDetail('06 al 16 Octubre (Semanas 1 y 2): Sesiones dinámicas de vivencia scout en descansos escolares/colegiales. Coordinación en WhatsApp oficial de padres.')" title="06 a 16 Octubre (Semana 1 y 2)">
+                    Centros Educativos (06-16 Oct)
+                  </div>
+                  <div class="col-span-8"></div>
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-white hover:bg-slate-50 transition border border-slate-200 shadow-2xs" data-category="seguimiento">
+                <div class="col-span-4 pr-3">
+                  <div class="font-bold text-slate-900 text-sm leading-snug">Sesión Informativa con Familias</div>
+                  <div class="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-500 shrink-0"></span>
+                    <span>Resp: Dirigencia de Sección</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-3 col-span-1 h-9 rounded-lg bg-slate-700 text-white text-[11px] flex items-center justify-center font-bold shadow-sm gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('Semana 3 (19 al 25 Octubre): Sesión informativa presencial con padres de jóvenes interesados en activaciones. Confirmación de listados iniciales.')" title="Semana 3: 19 - 25 Oct">
+                    Padres (S3)
+                  </div>
+                  <div class="col-span-7"></div>
+                </div>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-white hover:bg-slate-50 transition border border-slate-200 shadow-2xs" data-category="experiencia">
+                <div class="col-span-4 pr-3">
+                  <div class="font-bold text-purple-950 text-sm leading-snug">Logística E1 & Campaña "Traé a un Compa"</div>
+                  <div class="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-700 shrink-0"></span>
+                    <span>Resp: Todo el Grupo Scout 97</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-4 col-span-1 h-9 rounded-lg bg-purple-500 text-white text-[11px] flex items-center justify-center font-bold shadow-sm gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('Semana 4 (26 Octubre al 01 Noviembre): Coordinación logística para E1 \'Casa Común\'. Campaña de expectativa interna \'Traé a un compa\'.')" title="Semana 4">
+                    Prep. E1 (S4)
+                  </div>
+                  <div class="col-span-6"></div>
+                </div>
+              </div>
+
+              <!-- Row 5 - Experiencia 1 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-purple-50 border border-purple-300 hover:bg-purple-100/70 transition shadow-xs" data-category="experiencia">
+                <div class="col-span-4 pr-3">
+                  <div class="font-extrabold text-purple-950 text-sm leading-snug">E1: Proyecto 'Casa Común' (Siembra)</div>
+                  <div class="text-xs text-purple-800 font-semibold flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-800 shrink-0"></span>
+                    <span>07 Nov 2026 | Coordinación de Servicio</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-5 col-span-1 h-9 rounded-lg bg-purple-800 text-white text-xs flex items-center justify-center font-extrabold shadow-md ring-2 ring-purple-300 gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('EXPERIENCIA 1: Sábado 7 de Noviembre. Jornada comunitaria de limpieza en Guadalupe Centro y siembra. Se entrega una planta en maceta a cada invitado como símbolo de compromiso y fidelización.')" title="Sábado 7 de Noviembre">
+                    E1 (07 Nov)
+                  </div>
+                  <div class="col-span-5"></div>
+                </div>
+              </div>
+
+              <!-- Row 6 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-white hover:bg-slate-50 transition border border-slate-200 shadow-2xs" data-category="seguimiento">
+                <div class="col-span-4 pr-3">
+                  <div class="font-bold text-slate-900 text-sm leading-snug">Campaña de Recolección & Contacto 48h</div>
+                  <div class="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-600 shrink-0"></span>
+                    <span>Resp: Comunidad y Wak</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-6 col-span-1 h-9 rounded-lg bg-purple-600 text-white text-[11px] flex items-center justify-center font-bold shadow-sm gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('Semana 6 (09 al 15 Noviembre): Colecta de víveres/ropa para \'Atardecer Franciscano\'. Seguimiento inmediato (&lt;48h) a los invitados de E1.')" title="Semana 6">
+                    Colecta (S6)
+                  </div>
+                  <div class="col-span-4"></div>
+                </div>
+              </div>
+
+              <!-- Row 7 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-white hover:bg-slate-50 transition border border-slate-200 shadow-2xs" data-category="institucional">
+                <div class="col-span-4 pr-3">
+                  <div class="font-bold text-red-950 text-sm leading-snug">Clasificación & Filtro Salvaguarda +18</div>
+                  <div class="text-xs text-red-700 font-semibold flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-red-600 shrink-0"></span>
+                    <span>Resp: Jefatura de Grupo</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-7 col-span-1 h-9 rounded-lg bg-red-600 text-white text-[11px] flex items-center justify-center font-bold shadow-sm gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('Semana 7 (16 al 22 Noviembre): Clasificación de insumos recolectados y estricta verificación de requisitos de salvaguarda (+18 años) para el operativo nocturno.')" title="Semana 7">
+                    Filtro +18 (S7)
+                  </div>
+                  <div class="col-span-3"></div>
+                </div>
+              </div>
+
+              <!-- Row 8 - Experiencia 2 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-red-50 border border-red-300 hover:bg-red-100/70 transition shadow-xs" data-category="experiencia">
+                <div class="col-span-4 pr-3">
+                  <div class="font-extrabold text-red-950 text-sm leading-snug">E2: 'Atardecer Franciscano' (Día & Noche)</div>
+                  <div class="text-xs text-red-800 font-semibold flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-red-700 shrink-0"></span>
+                    <span>28 Nov 2026 | Resp: Comunidad y Adultos</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-8 col-span-1 h-9 rounded-lg bg-red-700 text-white text-xs flex items-center justify-center font-extrabold shadow-md ring-2 ring-red-300 gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('EXPERIENCIA 2: Sábado 28 de Noviembre. Fase Diurna: clasificación y armado con invitados. Fase Nocturna: entrega en terreno en El Dique y Cartago Centro, estrictamente reservada para mayores de 18 años por normativa AGSCR.')" title="Sábado 28 de Noviembre">
+                    E2 (28 Nov)
+                  </div>
+                  <div class="col-span-2"></div>
+                </div>
+              </div>
+
+              <!-- Row 9 - Experiencia 3 -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-purple-50 border border-purple-300 hover:bg-purple-100/70 transition shadow-xs" data-category="experiencia">
+                <div class="col-span-4 pr-3">
+                  <div class="font-extrabold text-purple-950 text-sm leading-snug">E3: Feria Navideña & Open House</div>
+                  <div class="text-xs text-purple-900 font-semibold flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-900 shrink-0"></span>
+                    <span>05 Dic 2026 | Parque Guadalupe (Afiliación)</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-9 col-span-1 h-9 rounded-lg bg-purple-900 text-white text-xs flex items-center justify-center font-extrabold shadow-md ring-2 ring-purple-400 gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('EXPERIENCIA 3: Sábado 05 de Diciembre. En el Parque de Guadalupe. 4 Bases Vivenciales (Manada, Tropa, Wak, Comunidad/Adultos) integradas con feria de emprendedores. Mesa de registro y conversión formal.')" title="Sábado 05 de Diciembre">
+                    E3 (05 Dic)
+                  </div>
+                  <div class="col-span-1"></div>
+                </div>
+              </div>
+
+              <!-- Row 10 - Cierre -->
+              <div class="gantt-row grid grid-cols-12 gap-2 items-center p-3 rounded-xl bg-red-100/70 border border-red-400 hover:bg-red-200/60 transition shadow-xs" data-category="seguimiento">
+                <div class="col-span-4 pr-3">
+                  <div class="font-extrabold text-red-950 text-sm leading-snug">Cierre de Metas & Expedientes AGSCR</div>
+                  <div class="text-xs text-red-900 font-bold flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-red-700 shrink-0"></span>
+                    <span>12 Dic 2026 | Registro Oficial y Tesorería</span>
+                  </div>
+                </div>
+                <div class="col-span-8 grid grid-cols-10 gap-1.5 relative h-11 items-center">
+                  <div class="col-start-10 col-span-1 h-9 rounded-lg bg-red-800 text-white text-xs flex items-center justify-center font-extrabold shadow-md ring-2 ring-red-400 gantt-bar-glow cursor-pointer transition text-center px-1" onclick="showItemDetail('Semana 10 (07 al 12 de Diciembre): Consolidación de expedientes, cobro de pólizas institucionales, registro oficial en el sistema de AGSCR y balance final de las metas cuantitativas.')" title="Fecha Límite 12 de Diciembre">
+                    12 Dic
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Legend and interactive tip -->
+        <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-purple-700 inline-block shadow-2xs"></span> E1 Casa Común (07 Nov)</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-red-700 inline-block shadow-2xs"></span> E2 Atardecer Franciscano (28 Nov)</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-purple-900 inline-block shadow-2xs"></span> E3 Open House (05 Dic)</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-red-800 inline-block shadow-2xs"></span> Cierre Metas (12 Dic)</span>
+          </div>
+          <p class="italic text-purple-900 font-medium">Toca o haz clic sobre cualquier barra para ver objetivos y detalles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: CALENDARIO INTERACTIVO (OCT-DIC)   -->
+    <!-- ========================================== -->
+    <div id="view-calendario" class="tab-view hidden space-y-4">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 sm:p-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-900 flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-purple-100 text-purple-800">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </span>
+              Calendario Estratégico 2026
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Seguimiento mensual para Guadalupe de Cartago</p>
+          </div>
+
+          <!-- Month Selector -->
+          <div class="inline-flex rounded-xl border border-slate-200 p-1 bg-slate-100 shadow-inner">
+            <button onclick="setCalendarMonth(9)" id="btn-month-9" class="cal-month-btn px-3.5 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900 transition">Octubre 2026</button>
+            <button onclick="setCalendarMonth(10)" id="btn-month-10" class="cal-month-btn px-3.5 py-1.5 text-xs font-bold rounded-lg bg-white text-purple-900 shadow-sm transition">Noviembre 2026</button>
+            <button onclick="setCalendarMonth(11)" id="btn-month-11" class="cal-month-btn px-3.5 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900 transition">Diciembre 2026</button>
+          </div>
+        </div>
+
+        <!-- Calendar Container -->
+        <div class="mt-5">
+          <div class="text-base font-extrabold text-slate-800 mb-3 flex items-center justify-between">
+            <span id="calendar-month-name" class="font-display text-lg text-slate-900">Noviembre 2026</span>
+            <span class="text-xs font-medium text-purple-900">Presiona un día para inspeccionar el evento</span>
+          </div>
+
+          <!-- Days Grid Header -->
+          <div class="grid grid-cols-7 gap-1.5 text-center font-bold text-xs text-slate-500 mb-1.5 uppercase tracking-wider">
+            <div class="py-1">Dom</div>
+            <div class="py-1">Lun</div>
+            <div class="py-1">Mar</div>
+            <div class="py-1">Mié</div>
+            <div class="py-1">Jue</div>
+            <div class="py-1">Vie</div>
+            <div class="py-1 text-purple-900 font-extrabold">Sáb</div>
+          </div>
+
+          <!-- Calendar Days Grid -->
+          <div id="calendar-days-grid" class="grid grid-cols-7 gap-1.5 text-xs">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+        <!-- Selected Day Detail Card (Enhanced Structure) -->
+        <div id="calendar-event-card" class="mt-6 p-4 sm:p-5 rounded-2xl bg-slate-900 text-white shadow-md border border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div id="event-badge-icon" class="w-10 h-10 rounded-xl bg-purple-700 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-inner">
+                S97
+              </div>
+              <div>
+                <h4 id="event-card-title" class="font-extrabold text-white text-sm sm:text-base">Selecciona un evento en el calendario</h4>
+                <p id="event-card-date" class="text-xs text-purple-300 font-medium">Información detallada de la acción scout</p>
+              </div>
+            </div>
+            <span id="event-card-tag" class="text-[10px] px-3 py-1 rounded-full font-extrabold uppercase tracking-wider bg-purple-900 text-purple-200 border border-purple-700/60 self-start sm:self-auto">
+              Info
+            </span>
+          </div>
+          
+          <p id="event-card-desc" class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+            Haz clic en los días destacados (especialmente los sábados de las 3 Grandes Experiencias y las fechas de activaciones escolares) para inspeccionar los objetivos, responsables y medidas de seguridad.
+          </p>
+
+          <div id="event-card-extra" class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400 flex flex-wrap gap-4 hidden">
+            <!-- Extra metadata populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: DIAGRAMA DE BURBUJAS ESCALADO       -->
+    <!-- ========================================== -->
+    <div id="view-burbujas" class="tab-view hidden space-y-4">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 sm:p-6">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-900 flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-red-100 text-red-800">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+              </span>
+              Diagrama de Burbujas Multidimensional
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+              El tamaño del radio representa de forma notoria la <strong>urgencia estratégica y magnitud de meta</strong>.
+            </p>
+          </div>
+
+          <!-- Bubble Toggle View -->
+          <div class="inline-flex rounded-xl border border-slate-200 p-1 bg-slate-100 text-xs shadow-inner">
+            <button onclick="renderBubbleChart('secciones')" id="btn-bubble-secciones" class="bubble-toggle px-3.5 py-1.5 font-bold rounded-lg bg-white text-purple-900 shadow-sm transition">
+              Por Sección Scout
+            </button>
+            <button onclick="renderBubbleChart('eventos')" id="btn-bubble-eventos" class="bubble-toggle px-3.5 py-1.5 font-bold rounded-lg text-slate-600 hover:text-slate-900 transition">
+              Por Experiencia de Servicio
+            </button>
+          </div>
+        </div>
+
+        <!-- Legend / Axis Guides -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4 bg-slate-900 text-white p-4 rounded-xl border border-slate-800 text-xs">
+          <div>
+            <span class="text-purple-300 font-extrabold uppercase tracking-wider text-[10px] block">Eje X (Horizontal):</span>
+            <span id="bubble-x-label" class="font-bold text-white text-sm">Edad Promedio de la Sección (Años)</span>
+          </div>
+          <div>
+            <span class="text-red-300 font-extrabold uppercase tracking-wider text-[10px] block">Eje Y (Vertical):</span>
+            <span id="bubble-y-label" class="font-bold text-white text-sm">Meta Cuantitativa de Incorporación</span>
+          </div>
+          <div>
+            <span class="text-amber-300 font-extrabold uppercase tracking-wider text-[10px] block">Escala Notoria del Radio:</span>
+            <span id="bubble-r-label" class="font-bold text-white text-sm">Urgencia Estructural / Habilitador Crítico</span>
+          </div>
+        </div>
+
+        <!-- Responsive Canvas Container with generous padding so text and bubbles are completely legible -->
+        <div class="relative w-full h-[430px] sm:h-[480px] bg-slate-50/60 rounded-xl p-3 border border-slate-200">
+          <canvas id="scoutBubbleChart"></canvas>
+        </div>
+
+        <!-- Explanatory note about noticeable differences -->
+        <div class="mt-3 text-xs text-slate-500 flex items-center justify-between">
+          <p>
+            💡 <strong>Interpretación:</strong> Las secciones mayores (Wak y Comunidad) tienen mayor radio por urgencia estructural (pirámide invertida), y Adultos Voluntarios posee el radio más prominente al ser el cuello de botella organizativo.
+          </p>
+        </div>
+
+        <!-- Interactive Legend Cards -->
+        <div id="bubble-legend-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-4 pt-4 border-t border-slate-100 text-xs">
+          <!-- Populated by JS -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: KPIS, SIMULADOR Y CONVERSIÓN        -->
+    <!-- ========================================== -->
+    <div id="view-kpis" class="tab-view hidden space-y-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left 2 Cols: Targets & Formula -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-bold font-display text-slate-900 flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-purple-100 text-purple-800">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </span>
+              Fórmula y Métricas Clave de Desempeño
+            </h3>
+            
+            <!-- Mathematical Formula in Dark Structured Box -->
+            <div class="my-4 p-5 rounded-2xl bg-slate-950 text-white font-mono text-center shadow-lg border border-purple-900/40 relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/20 rounded-full blur-2xl pointer-events-none"></div>
+              <div class="text-[10px] text-purple-300 uppercase tracking-widest font-extrabold mb-1.5">Fórmula Oficial AGSCR 97</div>
+              <div class="text-xs sm:text-sm md:text-base font-bold text-red-300 leading-relaxed px-2">
+                Tasa de Conversión = ( <span class="text-white">Invitados Registrados Formalmente</span> / <span class="text-purple-300">Total de Invitados en las 3 Experiencias</span> ) × 100
+              </div>
+            </div>
+
+            <!-- KPI Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 text-xs">
+              <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs">
+                <span class="font-extrabold text-slate-900 block text-sm">KPI 1 & 2: Secciones Mayores</span>
+                <p class="text-slate-600 mt-1 leading-snug">Wak (15-18): Mínimo 5 promesas/afiliaciones efectivas.</p>
+                <p class="text-slate-600 leading-snug">Comunidad (18-21): Mínimo 5 promesas efectivas.</p>
+                <div class="mt-2 text-red-700 font-extrabold text-[11px]">Resuelve pirámide invertida</div>
+              </div>
+
+              <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs">
+                <span class="font-extrabold text-slate-900 block text-sm">KPI 3: Salvaguarda Adultos</span>
+                <p class="text-slate-600 mt-1 leading-snug">Mínimo 5 personas adultas (+21) con expediente completo.</p>
+                <p class="text-slate-600 leading-snug">Hoja de delincuencia limpia + Curso <em>A Salvo del Peligro</em>.</p>
+                <div class="mt-2 text-purple-800 font-extrabold text-[11px]">Habilitador para abrir patrullas</div>
+              </div>
+
+              <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs">
+                <span class="font-extrabold text-slate-900 block text-sm">KPI 4: Crecimiento de Base</span>
+                <p class="text-slate-600 mt-1 leading-snug">Incremento porcentual en Manada y Tropa: <strong>+20%</strong> (+8 a 10 cada una).</p>
+                <div class="mt-2 text-purple-900 font-extrabold text-[11px]">Sostenibilidad generacional</div>
+              </div>
+
+              <div class="p-4 rounded-xl border border-red-200 bg-red-50/50 shadow-2xs">
+                <span class="font-extrabold text-red-950 block text-sm">Factor Crítico: Regla de 48 Horas</span>
+                <p class="text-red-900 mt-1 leading-relaxed">
+                  Contactar a cada invitado en un lapso no mayor a <strong>48 horas</strong> post-evento para asegurar fidelización y registro.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Target Distribution by Section -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 sm:p-6">
+            <h4 class="font-extrabold text-slate-900 text-sm mb-3">Distribución de la Meta de Incorporación (Meta total: ~33)</h4>
+            <div class="space-y-3.5 text-xs">
+              <div>
+                <div class="flex justify-between font-bold mb-1">
+                  <span class="text-slate-700">Manada (8-10 lobatos)</span>
+                  <span class="text-purple-800 font-extrabold">28.5%</span>
+                </div>
+                <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-purple-400 rounded-full" style="width: 28.5%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between font-bold mb-1">
+                  <span class="text-slate-700">Tropa (8-10 scouts)</span>
+                  <span class="text-purple-800 font-extrabold">28.5%</span>
+                </div>
+                <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-purple-700 rounded-full" style="width: 28.5%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between font-bold mb-1">
+                  <span class="text-slate-700">Wak (5 jóvenes)</span>
+                  <span class="text-red-600 font-extrabold">14.3%</span>
+                </div>
+                <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-red-600 rounded-full" style="width: 14.3%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between font-bold mb-1">
+                  <span class="text-slate-700">Comunidad (5 jóvenes)</span>
+                  <span class="text-red-700 font-extrabold">14.3%</span>
+                </div>
+                <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-red-800 rounded-full" style="width: 14.3%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between font-bold mb-1">
+                  <span class="text-slate-700">Adultos Voluntarios (5 adultos)</span>
+                  <span class="text-slate-900 font-extrabold">14.3%</span>
+                </div>
+                <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-slate-900 rounded-full" style="width: 14.3%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Col: Simulator with Dark Accent Card -->
+        <div class="space-y-4">
+          <div class="bg-slate-950 text-white rounded-2xl shadow-xl p-5 sm:p-6 border border-purple-900/40 relative overflow-hidden">
+            <div class="absolute -bottom-10 -right-10 w-44 h-44 bg-red-600/15 rounded-full blur-2xl pointer-events-none"></div>
+
+            <h3 class="text-base font-bold font-display text-white flex items-center gap-2">
+              <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+              Simulador de Conversión
+            </h3>
+            <p class="text-xs text-purple-200 mt-1 leading-snug">
+              Calcula cuántos invitados necesitas en las 3 Experiencias para asegurar los 31-35 nuevos integrantes requeridos.
+            </p>
+
+            <div class="mt-5 space-y-4 text-xs">
+              <!-- Slider 1: Total Invitados -->
+              <div>
+                <div class="flex justify-between mb-1.5 font-semibold">
+                  <span class="text-slate-300">Total invitados proyectados:</span>
+                  <span id="slider-invitados-val" class="font-extrabold text-red-400 text-sm">90 invitados</span>
+                </div>
+                <input type="range" id="slider-invitados" min="30" max="180" step="5" value="90" oninput="calculateSimulator()" class="w-full accent-red-500 bg-slate-800 rounded-lg cursor-pointer h-2">
+                <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                  <span>30 (10/evento)</span>
+                  <span>90 (30/evento)</span>
+                  <span>180 (60/evento)</span>
+                </div>
+              </div>
+
+              <!-- Slider 2: Conversion Rate -->
+              <div>
+                <div class="flex justify-between mb-1.5 font-semibold">
+                  <span class="text-slate-300">Tasa de Conversión esperada:</span>
+                  <span id="slider-tasa-val" class="font-extrabold text-purple-300 text-sm">37 %</span>
+                </div>
+                <input type="range" id="slider-tasa" min="15" max="65" step="1" value="37" oninput="calculateSimulator()" class="w-full accent-purple-400 bg-slate-800 rounded-lg cursor-pointer h-2">
+                <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                  <span>15% (Conservador)</span>
+                  <span>37% (Equilibrado)</span>
+                  <span>65% (Óptimo)</span>
+                </div>
+              </div>
+
+              <!-- Projected Result Box -->
+              <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-bold">Nuevos Miembros Proyectados</span>
+                <span id="sim-result-members" class="text-3xl sm:text-4xl font-black text-white my-1 block font-display">33</span>
+                <span id="sim-result-status" class="inline-block px-3 py-1 rounded-md text-[11px] font-bold bg-purple-700 text-white shadow-xs">
+                  ✓ Meta Cumplida (Meta: 31-35)
+                </span>
+              </div>
+
+              <div class="text-[11px] text-slate-300 bg-slate-900/80 p-3 rounded-xl border border-slate-800 space-y-1.5 font-medium">
+                <div class="flex justify-between">
+                  <span>Invitados prom. por evento:</span>
+                  <span id="sim-per-event" class="font-bold text-white">30 jóvenes</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Contactos en &lt;48h requeridos:</span>
+                  <span id="sim-contacts-needed" class="font-bold text-purple-300">90 seguimientos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Methodological Note -->
+          <div class="bg-purple-50 rounded-2xl p-4 border border-purple-200 text-purple-950 text-xs">
+            <div class="flex items-center gap-2 font-bold mb-1 text-purple-900">
+              <svg class="w-4 h-4 text-purple-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Estrategia "Traé a un compa"</span>
+            </div>
+            <p class="leading-relaxed text-slate-700">
+              Disminuye drásticamente la resistencia al reclutamiento pasivo porque los protagonistas asisten en compañía de amigos de su misma edad a vivir el servicio antes de formalizar la membresía.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: EJES, TERRITORIO Y SALVAGUARDA      -->
+    <!-- ========================================== -->
+    <div id="view-resumen" class="tab-view hidden space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Card 1: Ámbito Territorial (Updated accurately) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5">
+          <div class="flex items-center gap-2.5 text-purple-950 font-bold font-display text-base mb-2">
+            <span class="p-2 rounded-xl bg-purple-100 text-purple-800">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </span>
+            Ámbito Territorial de Impacto
+          </div>
+          <p class="text-xs text-slate-600 mb-3">Distrito de Guadalupe de Cartago y barrios priorizados para colocación de afiches y convocatoria:</p>
+          
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-700"></span> Arenilla
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-700"></span> El Valle
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-700"></span> La Mora
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-700"></span> La Joya
+            </div>
+            <div class="p-2.5 rounded-lg bg-red-50 border border-red-200 font-black text-red-900 flex items-center gap-2 col-span-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span> El Dique (Zona prioritaria de impacto y servicio)
+            </div>
+          </div>
+
+          <!-- Note clarifying Salón Parroquial as temporary school venue -->
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-600 bg-purple-50/50 p-2.5 rounded-xl border border-purple-100">
+            <strong>Nota territorial:</strong> La Escuela Carlos J. Peralta se encuentra temporalmente reubicada en el <strong>Salón Parroquial de Guadalupe</strong> por obras de remodelación, por lo que este salón funciona como punto neurálgico para la colocación de afiches e información a las familias.
+          </div>
+        </div>
+
+        <!-- Card 2: Ejes Estratégicos -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5">
+          <div class="flex items-center gap-2.5 text-purple-950 font-bold font-display text-base mb-2">
+            <span class="p-2 rounded-xl bg-purple-100 text-purple-800">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </span>
+            Ejes 1 y 2: Alianzas Clave
+          </div>
+          
+          <div class="space-y-3.5 text-xs mt-3">
+            <div class="border-l-4 border-purple-700 pl-3">
+              <h5 class="font-bold text-slate-900">Eje 1: Educativo (06 - 16 Oct)</h5>
+              <p class="text-slate-600 text-[11px] mt-0.5 leading-snug">
+                Escuela Carlos J. Peralta y Colegio Francisca Carrasco. Tramitación de permisos formales, vivencias en descansos lideradas por Jorge David Morales (Wak) y difusión en grupos de WhatsApp de padres.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-red-600 pl-3">
+              <h5 class="font-bold text-slate-900">Eje 2: Pastoral & Convocatoria</h5>
+              <p class="text-slate-600 text-[11px] mt-0.5 leading-snug">
+                Coordinación con la Parroquia de Guadalupe: avisos explícitos en misas dominicales ("Buscamos dirigentes y colaboradores comunitarios, sin experiencia previa requerida") y afiches en pulperías.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Salvaguarda y Voluntariado Adulto -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 md:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2.5 text-red-950 font-bold font-display text-base mb-2">
+            <span class="p-2 rounded-xl bg-red-100 text-red-800">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </span>
+            Salvaguarda: "A Salvo del Peligro"
+          </div>
+          <p class="text-xs text-slate-600 mb-2">Requisitos normativos innegociables para cada voluntario adulto (+21 años):</p>
+
+          <ul class="space-y-2 text-xs text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="text-purple-700 font-bold">✓</span>
+              <span><strong>Hoja de Delincuencia:</strong> Certificado de antecedentes penales actualizado y limpio.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-700 font-bold">✓</span>
+              <span><strong>Curso de Inducción:</strong> Aprobación de la formación institucional básica de AGSCR.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-700 font-bold">✓</span>
+              <span><strong>Safe from Harm:</strong> Certificación vigente en política institucional "A Salvo del Peligro".</span>
+            </li>
+            <li class="flex items-start gap-2 text-red-950 bg-red-50 p-2.5 rounded-xl border border-red-200 mt-2">
+              <span class="font-bold text-red-600 text-sm">⚠️</span>
+              <span class="text-[11px] leading-snug">
+                <strong>Protocolo de Seguridad Nocturna E2:</strong> La salida nocturna en El Dique y Cartago Centro está estrictamente reservada para mayores de 18 años (Comunidad y Adultos).
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- 3 Grandes Experiencias Detailed Breakdown -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5">
+        <h3 class="text-base font-bold font-display text-slate-900 mb-4 flex items-center gap-2">
+          <span class="p-1.5 rounded-lg bg-purple-100 text-purple-800">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+          </span>
+          Las Tres Grandes Experiencias de Servicio Comunitario
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <!-- E1 -->
+          <div class="border border-purple-200 bg-purple-50/50 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-purple-950 text-sm">Experiencia 1</span>
+              <span class="text-[10px] bg-purple-200 text-purple-900 px-2 py-0.5 rounded font-extrabold">07 Nov 2026</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm">Proyecto 'Casa Común'</h4>
+            <p class="text-slate-600 italic">"Pongamos la semilla que respiraremos mañana"</p>
+            <p class="text-slate-700 leading-snug">Limpieza y siembra de áreas públicas en Guadalupe Centro. Cada integrante asiste con un invitado ("Traé a un compa").</p>
+            <div class="p-2.5 rounded-lg bg-white border border-purple-200 font-semibold text-purple-950 text-[11px]">
+              Símbolo: Entrega de plantita en maceta a cada invitado con compromiso de seguimiento.
+            </div>
+          </div>
+
+          <!-- E2 -->
+          <div class="border border-red-200 bg-red-50/50 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-red-950 text-sm">Experiencia 2</span>
+              <span class="text-[10px] bg-red-200 text-red-950 px-2 py-0.5 rounded font-extrabold">28 Nov 2026</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm">'Atardecer Franciscano'</h4>
+            <p class="text-slate-600 italic">Solidaridad y ayuda a personas vulnerables</p>
+            <p class="text-slate-700 leading-snug"><strong>Fase 1 (Diurna):</strong> Armado de paquetes de víveres con invitados de todas las edades.</p>
+            <p class="text-red-900 font-bold text-[11px] leading-snug"><strong>Fase 2 (Nocturna):</strong> Operativo en terreno en El Dique y Cartago Centro exclusivo para mayores de 18 años por salvaguarda.</p>
+          </div>
+
+          <!-- E3 -->
+          <div class="border border-purple-300 bg-purple-100/50 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-purple-950 text-sm">Experiencia 3</span>
+              <span class="text-[10px] bg-purple-800 text-white px-2 py-0.5 rounded font-extrabold">05 Dic 2026</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm">Feria Navideña & Open House</h4>
+            <p class="text-slate-600 italic">"Ser Scout por un Día" en Parque de Guadalupe</p>
+            <div class="space-y-1 text-slate-700 text-[11px]">
+              <div>• <strong>Base Manada:</strong> Cabuyería básica y juegos.</div>
+              <div>• <strong>Base Tropa:</strong> Cabañería y primeros auxilios.</div>
+              <div>• <strong>Base Wak:</strong> Retos y dinámicas de liderazgo.</div>
+              <div>• <strong>Base Comunidad/Adultos:</strong> Mesa de voluntariado.</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-white border border-purple-300 font-extrabold text-purple-900 text-[11px] text-center shadow-2xs">
+              Punto de Conversión e Inscripción In Situ
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="detail-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 transform transition-all">
+      <div class="flex items-start justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-900 flex items-center justify-center font-bold text-xs">S97</span>
+          <h3 class="font-extrabold text-slate-900 text-base" id="modal-title">Detalle del Hito</h3>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold p-1">✕</button>
+      </div>
+      <div class="py-4">
+        <p id="modal-content" class="text-sm text-slate-600 leading-relaxed"></p>
+      </div>
+      <div class="pt-3 border-t border-slate-100 flex justify-end">
+        <button onclick="closeModal()" class="px-5 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-bold transition shadow-sm">
+          Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div>
+        <p class="font-bold text-slate-300">Grupo Guía y Scout 97 Domingo Savio</p>
+        <p class="text-slate-400">Guadalupe de Cartago, Costa Rica • Asociación de Guías y Scouts de Costa Rica</p>
+      </div>
+      <div class="text-slate-400 font-mono text-[11px]">
+        Fecha Límite Oficial: 12 de Diciembre de 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT ENGINE & CHART INITIALIZATION   -->
+  <!-- ========================================== -->
+  <script>
+    const appState = {
+      activeTab: 'gantt',
+      currentCalMonth: 10, // Default Noviembre 2026
+      bubbleView: 'secciones',
+      bubbleChartInstance: null,
+      isHeaderCollapsed: false,
+      userManualToggle: false
+    };
+
+    function setHeaderCollapsed(collapsed) {
+      appState.isHeaderCollapsed = collapsed;
+      const badges = document.getElementById('header-collapsible-badges');
+      const subtitle = document.getElementById('header-collapsible-subtitle');
+      const metrics = document.getElementById('header-collapsible-metrics');
+      const container = document.getElementById('header-container');
+      const title = document.getElementById('header-title');
+      const nav = document.getElementById('header-nav');
+      const toggleIcon = document.getElementById('header-toggle-icon');
+      const toggleText = document.getElementById('header-toggle-text');
+
+      if (collapsed) {
+        if (badges) {
+          badges.classList.add('max-h-0', 'opacity-0');
+          badges.classList.remove('max-h-12', 'opacity-100');
+        }
+        if (subtitle) {
+          subtitle.classList.add('max-h-0', 'opacity-0');
+          subtitle.classList.remove('max-h-8', 'opacity-100');
+        }
+        if (metrics) {
+          metrics.classList.add('max-h-0', 'opacity-0');
+          metrics.classList.remove('max-h-24', 'opacity-100');
+        }
+        if (container) {
+          container.classList.remove('pt-4', 'pb-3');
+          container.classList.add('pt-2.5', 'pb-1.5');
+        }
+        if (title) {
+          title.classList.remove('sm:text-2xl', 'md:text-3xl');
+          title.classList.add('text-base', 'sm:text-lg');
+        }
+        if (nav) {
+          nav.classList.remove('mt-3', 'sm:mt-4', 'pt-2.5');
+          nav.classList.add('mt-2', 'pt-1.5');
+        }
+        if (toggleIcon) toggleIcon.classList.add('rotate-180');
+        if (toggleText) toggleText.textContent = "Expandir";
+      } else {
+        if (badges) {
+          badges.classList.remove('max-h-0', 'opacity-0');
+          badges.classList.add('max-h-12', 'opacity-100');
+        }
+        if (subtitle) {
+          subtitle.classList.remove('max-h-0', 'opacity-0');
+          subtitle.classList.add('max-h-8', 'opacity-100');
+        }
+        if (metrics) {
+          metrics.classList.remove('max-h-0', 'opacity-0');
+          metrics.classList.add('max-h-24', 'opacity-100');
+        }
+        if (container) {
+          container.classList.add('pt-4', 'pb-3');
+          container.classList.remove('pt-2.5', 'pb-1.5');
+        }
+        if (title) {
+          title.classList.add('sm:text-2xl', 'md:text-3xl');
+          title.classList.remove('text-base', 'sm:text-lg');
+        }
+        if (nav) {
+          nav.classList.add('mt-3', 'sm:mt-4', 'pt-2.5');
+          nav.classList.remove('mt-2', 'pt-1.5');
+        }
+        if (toggleIcon) toggleIcon.classList.remove('rotate-180');
+        if (toggleText) toggleText.textContent = "Colapsar";
+      }
+    }
+
+    function toggleHeaderCollapse(fromButton = false) {
+      if (fromButton) {
+        appState.userManualToggle = true;
+      }
+      setHeaderCollapsed(!appState.isHeaderCollapsed);
+    }
+
+    // Scroll listener: auto-collapse when scrolling down, auto-expand when returning to top
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY <= 15) {
+        appState.userManualToggle = false;
+        if (appState.isHeaderCollapsed) {
+          setHeaderCollapsed(false);
+        }
+      } else if (scrollY > 60 && !appState.userManualToggle && !appState.isHeaderCollapsed) {
+        setHeaderCollapsed(true);
+      }
+    }, { passive: true });
+
+    // Calendar events database for Oct, Nov, Dec 2026
+    const calendarEvents = [
+      // Octubre 2026
+      { day: 5, month: 9, year: 2026, title: "Envío Cartas & Afiches", type: "institucional", iconText: "DOC", desc: "Envío formal de cartas a las Direcciones de la Esc. Carlos J. Peralta y Col. Francisca Carrasco. Colocación de afiches en el Salón Parroquial (sede temporal de la escuela por remodelación) y comercios aliados en Arenilla, El Valle y La Mora.", tag: "Eje 1 & 2" },
+      { day: 6, month: 9, year: 2026, title: "Inicio Activaciones Recreo", type: "institucional", iconText: "REC", desc: "Arranque de las dinámicas scout en recreos escolares/colegiales coordinadas por Jorge David Morales (Wak). Periodo: 6 al 16 de Octubre.", tag: "Eje 1" },
+      { day: 11, month: 9, year: 2026, title: "Avisos en Misas Parroquia", type: "institucional", iconText: "PAR", desc: "Avisos en misas dominicales en Guadalupe: 'Buscamos dirigentes y colaboradores comunitarios' (sin experiencia previa requerida).", tag: "Eje 2" },
+      { day: 16, month: 9, year: 2026, title: "Cierre Activaciones Escolares", type: "institucional", iconText: "FIN", desc: "Finalización de la ronda de vivencias en centros educativos y consolidación de contactos de madres y padres vía WhatsApp.", tag: "Eje 1" },
+      { day: 24, month: 9, year: 2026, title: "Reunión de Familias", type: "seguimiento", iconText: "FAM", desc: "Sesión informativa con familias de jóvenes interesados en las activaciones escolares para presentar el programa.", tag: "Semana 3" },
+      { day: 31, month: 9, year: 2026, title: "Campaña 'Traé a un compa'", type: "experiencia", iconText: "E1", desc: "Cierre de logística para E1 'Casa Común' y campaña de expectativa de invitación interna.", tag: "Semana 4" },
+
+      // Noviembre 2026
+      { day: 7, month: 10, year: 2026, title: "E1: PROYECTO 'CASA COMÚN'", type: "hito", iconText: "E1", desc: "PRIMERA GRAN EXPERIENCIA: Limpieza y siembra comunitaria en Guadalupe Centro. Dinámica 'Traé a un compa' con entrega de planta en maceta a cada invitado como símbolo de compromiso.", tag: "Experiencia 1", highlight: true },
+      { day: 9, month: 10, year: 2026, title: "Filtro 48h & Colecta E2", type: "seguimiento", iconText: "48h", desc: "Primer filtro estricto de fichas de inscripción en menos de 48h post-E1. Arranque de colecta de víveres y ropa para el Atardecer Franciscano.", tag: "Semana 6" },
+      { day: 21, month: 10, year: 2026, title: "Filtro Salvaguarda +18", type: "institucional", iconText: "+18", desc: "Verificación de requisitos de hoja de delincuencia y curso Safe from Harm para quienes asisten al operativo nocturno en El Dique.", tag: "Semana 7" },
+      { day: 28, month: 10, year: 2026, title: "E2: 'ATARDECER FRANCISCANO'", type: "hito", iconText: "E2", desc: "SEGUNDA GRAN EXPERIENCIA: Fase 1 (Día): Clasificación y armado de paquetes con invitados (todas las edades). Fase 2 (Noche): Salida en terreno en El Dique y Cartago Centro (Exclusivo +18 por Salvaguarda).", tag: "Experiencia 2", highlight: true, isRed: true },
+      { day: 30, month: 10, year: 2026, title: "Seguimiento E2 & Logística E3", type: "seguimiento", iconText: "E3", desc: "Fidelización de contactos de E2 y montaje de las 4 bases temáticas vivenciales en el Parque de Guadalupe.", tag: "Semana 9" },
+
+      // Diciembre 2026
+      { day: 5, month: 11, year: 2026, title: "E3: FERIA & OPEN HOUSE", type: "hito", iconText: "E3", desc: "TERCERA GRAN EXPERIENCIA: Parque de Guadalupe. 4 Bases Vivenciales: Manada (cabuyería), Tropa (cabañería), Wak (retos), Comunidad/Adultos. Emprendedores locales y Mesa de Afiliación formal in situ.", tag: "Experiencia 3", highlight: true },
+      { day: 8, month: 11, year: 2026, title: "Consolidación Expedientes AGSCR", type: "seguimiento", iconText: "DOC", desc: "Registro formal en la plataforma institucional y cobro de membresías / pólizas.", tag: "Semana 10" },
+      { day: 12, month: 11, year: 2026, title: "CIERRE DE METAS 2026", type: "hito", iconText: "FIN", desc: "DEADLINE INSTITUCIONAL: Evaluación de cumplimiento de metas (+31 a 35 miembros) y entrega de informe a la Jefatura.", tag: "Meta Final", highlight: true, isRed: true }
+    ];
+
+    function switchTab(tabId) {
+      appState.activeTab = tabId;
+      document.querySelectorAll('.tab-view').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white', 'shadow-md');
+        btn.classList.add('text-slate-300');
+      });
+
+      const activeView = document.getElementById(`view-${tabId}`);
+      if (activeView) activeView.classList.remove('hidden');
+
+      const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-purple-600', 'text-white', 'shadow-md');
+        activeBtn.classList.remove('text-slate-300');
+      }
+
+      if (tabId === 'burbujas') {
+        setTimeout(() => renderBubbleChart(appState.bubbleView), 60);
+      }
+      if (tabId === 'calendario') {
+        renderCalendar();
+      }
+    }
+
+    function filterGantt(category) {
+      document.querySelectorAll('.gantt-filter').forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-purple-700', 'text-white', 'shadow-xs');
+          btn.classList.remove('bg-slate-100', 'text-slate-700');
+        } else {
+          btn.classList.remove('bg-purple-700', 'text-white', 'shadow-xs');
+          btn.classList.add('bg-slate-100', 'text-slate-700');
+        }
+      });
+
+      const rows = document.querySelectorAll('.gantt-row');
+      rows.forEach(row => {
+        if (category === 'all' || row.getAttribute('data-category') === category) {
+          row.style.display = 'grid';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function showItemDetail(text) {
+      document.getElementById('modal-title').textContent = "Detalle Operativo del Hito";
+      document.getElementById('modal-content').innerHTML = text;
+      document.getElementById('detail-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('detail-modal').classList.add('hidden');
+    }
+
+    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+    function setCalendarMonth(monthIdx) {
+      appState.currentCalMonth = monthIdx;
+      document.querySelectorAll('.cal-month-btn').forEach((btn, idx) => {
+        const targetIdx = 9 + idx;
+        if (targetIdx === monthIdx) {
+          btn.classList.add('bg-white', 'text-purple-900', 'shadow-sm');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('bg-white', 'text-purple-900', 'shadow-sm');
+          btn.classList.add('text-slate-600');
+        }
+      });
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const year = 2026;
+      const month = appState.currentCalMonth;
+      document.getElementById('calendar-month-name').textContent = `${monthNames[month]} 2026`;
+
+      const firstDay = new Date(year, month, 1).getDay(); // 0 = Sun
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      const grid = document.getElementById('calendar-days-grid');
+      grid.innerHTML = '';
+
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement('div');
+        blank.className = "h-16 sm:h-20 bg-slate-50/50 rounded-xl border border-transparent";
+        grid.appendChild(blank);
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dayCell = document.createElement('div');
+        const dayEvents = calendarEvents.filter(e => e.year === year && e.month === month && e.day === d);
+        
+        let borderClass = "border-slate-200 bg-white hover:border-purple-300";
+        let textClass = "text-slate-700";
+        let isSaturday = new Date(year, month, d).getDay() === 6;
+
+        if (isSaturday) {
+          borderClass = "border-purple-200 bg-purple-50/40 hover:bg-purple-100/50";
+          textClass = "text-purple-950 font-extrabold";
+        }
+
+        if (dayEvents.length > 0) {
+          if (dayEvents.some(e => e.isRed)) {
+            borderClass = "border-red-400 bg-red-50/80 ring-2 ring-red-300 shadow-2xs";
+          } else if (dayEvents.some(e => e.highlight)) {
+            borderClass = "border-purple-400 bg-purple-50 ring-2 ring-purple-300 shadow-2xs";
+          } else {
+            borderClass = "border-purple-200 bg-purple-50/40";
+          }
+        }
+
+        dayCell.className = `calendar-cell h-16 sm:h-20 p-1.5 rounded-xl border transition cursor-pointer flex flex-col justify-between ${borderClass}`;
+        
+        let eventsHtml = '';
+        dayEvents.forEach(ev => {
+          let badgeColor = ev.isRed ? 'bg-red-700 text-white' : (ev.highlight ? 'bg-purple-700 text-white' : 'bg-slate-800 text-white');
+          eventsHtml += `
+            <div class="truncate text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded ${badgeColor} font-bold flex items-center gap-1 mt-0.5 shadow-2xs" title="${ev.title}">
+              <span class="font-mono text-[8px] bg-black/25 px-1 rounded">${ev.iconText}</span>
+              <span class="truncate">${ev.title}</span>
+            </div>
+          `;
+        });
+
+        dayCell.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black ${textClass}">${d}</span>
+            ${dayEvents.length > 0 ? '<span class="w-1.5 h-1.5 rounded-full bg-purple-600"></span>' : ''}
+          </div>
+          <div class="flex-grow overflow-hidden flex flex-col justify-end">
+            ${eventsHtml}
+          </div>
+        `;
+
+        dayCell.onclick = () => {
+          if (dayEvents.length > 0) {
+            selectCalendarEvent(dayEvents[0]);
+          } else {
+            selectEmptyDay(d, month, year);
+          }
+        };
+
+        grid.appendChild(dayCell);
+      }
+    }
+
+    function selectCalendarEvent(ev) {
+      const badgeIcon = document.getElementById('event-badge-icon');
+      badgeIcon.textContent = ev.iconText;
+      badgeIcon.className = `w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-xs shrink-0 shadow-inner ${ev.isRed ? 'bg-red-600 text-white' : 'bg-purple-700 text-white'}`;
+      
+      document.getElementById('event-card-title').textContent = ev.title;
+      document.getElementById('event-card-date').textContent = `${ev.day} de ${monthNames[ev.month]} de ${ev.year} | Grupo 97 Domingo Savio`;
+      document.getElementById('event-card-tag').textContent = ev.tag;
+      document.getElementById('event-card-tag').className = `text-[10px] px-3 py-1 rounded-full font-extrabold uppercase tracking-wider ${ev.isRed ? 'bg-red-950 text-red-200 border border-red-700/60' : 'bg-purple-900 text-purple-200 border border-purple-700/60'}`;
+      document.getElementById('event-card-desc').textContent = ev.desc;
+
+      const extraBox = document.getElementById('event-card-extra');
+      extraBox.classList.remove('hidden');
+      extraBox.innerHTML = `
+        <span>📌 <strong>Territorio:</strong> Guadalupe de Cartago</span>
+        <span>⏱ <strong>Seguimiento:</strong> Contacto en lapso no mayor a 48h</span>
+        <span>🛡️ <strong>Salvaguarda:</strong> Políticas AGSCR / A Salvo del Peligro</span>
+      `;
+    }
+
+    function selectEmptyDay(d, m, y) {
+      const badgeIcon = document.getElementById('event-badge-icon');
+      badgeIcon.textContent = "S97";
+      badgeIcon.className = "w-10 h-10 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center font-bold text-xs shrink-0";
+      
+      document.getElementById('event-card-title').textContent = `Día ${d} de ${monthNames[m]} de ${y}`;
+      document.getElementById('event-card-date').textContent = "Actividad regular de programa scout";
+      document.getElementById('event-card-tag').textContent = "Programa";
+      document.getElementById('event-card-tag').className = "text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider bg-slate-800 text-slate-300";
+      document.getElementById('event-card-desc').textContent = "No hay eventos comunitarios masivos programados para esta fecha. Las secciones avanzan con difusión territorial y ciclo de programa regular.";
+      document.getElementById('event-card-extra').classList.add('hidden');
+    }
+
+    // Radii have been recalibrated so differences are stark and immediately distinguishable:
+    // Base sections (14px), Mayores (26px), Adultos (36px).
+    const bubbleSectionsData = [
+      {
+        section: "Manada",
+        ageLabel: "7 a 10/11 años",
+        x: 9,          // Average age
+        y: 9,          // Target (+8-10)
+        r: 15,         // Scaled radius for standard base section
+        urgency: "Sostenibilidad de Base",
+        bg: "rgba(147, 51, 234, 0.7)",
+        border: "#7e22ce",
+        desc: "Meta: +8 a 10 lobatos/lobatas. Mantiene el semillero y base de crecimiento del grupo."
+      },
+      {
+        section: "Tropa",
+        ageLabel: "11 a 15 años",
+        x: 13,
+        y: 9,
+        r: 16,
+        urgency: "Retención y Fortalecimiento",
+        bg: "rgba(107, 33, 168, 0.75)",
+        border: "#581c87",
+        desc: "Meta: +8 a 10 nuevos scouts integrados en patrullas activas."
+      },
+      {
+        section: "Wak",
+        ageLabel: "15 a 17/18 años",
+        x: 16.5,
+        y: 5,
+        r: 27,         // Significantly larger radius reflecting urgent structural inversion
+        urgency: "Alta Urgencia (Pirámide Invertida)",
+        bg: "rgba(220, 38, 38, 0.85)",
+        border: "#991b1b",
+        desc: "Meta: Mínimo 5 jóvenes (5 promesas efectivas). Vital para liderar servicio social y resolver pirámide invertida."
+      },
+      {
+        section: "Comunidad",
+        ageLabel: "18 a 21 años",
+        x: 19.5,
+        y: 5,
+        r: 28,         // Large radius reflecting urgent structural need
+        urgency: "Alta Urgencia (Proyectos Sociales)",
+        bg: "rgba(185, 28, 28, 0.9)",
+        border: "#7f1d1d",
+        desc: "Meta: Mínimo 5 nuevos jóvenes. Responsables directos del servicio en El Dique y Cartago Centro."
+      },
+      {
+        section: "Adultos Voluntarios",
+        ageLabel: "+21 años",
+        x: 27,
+        y: 5,
+        r: 38,         // Prominent, largest radius: Organizational Bottleneck
+        urgency: "Habilitador Crítico (Cuello de Botella)",
+        bg: "rgba(15, 23, 42, 0.92)",
+        border: "#6b21a8",
+        desc: "Meta: Mínimo 5 adultos con inducción y \'A Salvo del Peligro\'. La apertura de nuevas patrullas está limitada por este factor."
+      }
+    ];
+
+    const bubbleEventsData = [
+      {
+        section: "E1: Casa Común (07 Nov)",
+        ageLabel: "Todas las Edades",
+        x: 11,
+        y: 12,
+        r: 18,
+        urgency: "Siembra y Eco-Servicio",
+        bg: "rgba(147, 51, 234, 0.75)",
+        border: "#6b21a8",
+        desc: "Limpieza en Guadalupe Centro y siembra. Se regala plantita en maceta con compromiso de seguimiento."
+      },
+      {
+        section: "E2: Atardecer Franciscano (28 Nov)",
+        ageLabel: "Día: Todos | Noche: +18",
+        x: 19.5,
+        y: 10,
+        r: 26,
+        urgency: "Servicio Social & Salvaguarda",
+        bg: "rgba(220, 38, 38, 0.85)",
+        border: "#991b1b",
+        desc: "Recolección comunitaria. Operativo nocturno en El Dique exclusivo +18 en estricto cumplimiento Safe from Harm."
+      },
+      {
+        section: "E3: Feria & Open House (05 Dic)",
+        ageLabel: "Comunidad en General",
+        x: 26.5,
+        y: 14,
+        r: 34,         // Largest event radius (highest conversion impact)
+        urgency: "Máxima Conversión e Inscripción In Situ",
+        bg: "rgba(107, 33, 168, 0.9)",
+        border: "#3b0764",
+        desc: "Parque de Guadalupe. 4 bases vivenciales interactivas, emprendedores locales y mesa de registro oficial."
+      }
+    ];
+
+    function renderBubbleChart(viewType) {
+      appState.bubbleView = viewType;
+      
+      const btnSec = document.getElementById('btn-bubble-secciones');
+      const btnEve = document.getElementById('btn-bubble-eventos');
+      
+      if (viewType === 'secciones') {
+        btnSec.classList.add('bg-white', 'text-purple-900', 'shadow-sm');
+        btnSec.classList.remove('text-slate-600');
+        btnEve.classList.remove('bg-white', 'text-purple-900', 'shadow-sm');
+        btnEve.classList.add('text-slate-600');
+
+        document.getElementById('bubble-x-label').textContent = "Edad Promedio de la Sección (Años)";
+        document.getElementById('bubble-y-label').textContent = "Meta Cuantitativa de Incorporación";
+        document.getElementById('bubble-r-label').textContent = "Urgencia Estructural / Habilitador Crítico";
+      } else {
+        btnEve.classList.add('bg-white', 'text-purple-900', 'shadow-sm');
+        btnEve.classList.remove('text-slate-600');
+        btnSec.classList.remove('bg-white', 'text-purple-900', 'shadow-sm');
+        btnSec.classList.add('text-slate-600');
+
+        document.getElementById('bubble-x-label').textContent = "Enfoque de Edad Promedio (Años)";
+        document.getElementById('bubble-y-label').textContent = "Potencial Estimado de Captación Directa";
+        document.getElementById('bubble-r-label').textContent = "Impacto Territorial y Visibilidad Comunitaria";
+      }
+
+      const activeDataset = viewType === 'secciones' ? bubbleSectionsData : bubbleEventsData;
+
+      const legendContainer = document.getElementById('bubble-legend-cards');
+      legendContainer.innerHTML = '';
+      activeDataset.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "p-3 rounded-xl border border-slate-200 bg-white hover:border-purple-300 hover:shadow-sm transition cursor-pointer";
+        card.innerHTML = `
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-3.5 h-3.5 rounded-full inline-block shrink-0 shadow-2xs" style="background-color: ${item.bg}; border: 1.5px solid ${item.border}"></span>
+            <span class="font-extrabold text-slate-900 truncate">${item.section}</span>
+          </div>
+          <div class="text-[11px] text-slate-500 font-medium">${item.ageLabel}</div>
+          <div class="font-bold text-slate-900 mt-1">Meta: ${item.y} nuevos</div>
+          <div class="text-[10px] text-purple-800 font-semibold truncate mt-0.5">${item.urgency}</div>
+        `;
+        card.onclick = () => {
+          showItemDetail(`<strong>${item.section} (${item.ageLabel})</strong><br><br>${item.desc}<br><br><strong>Nivel de Urgencia/Impacto:</strong> ${item.urgency}`);
+        };
+        legendContainer.appendChild(card);
+      });
+
+      const ctx = document.getElementById('scoutBubbleChart').getContext('2d');
+      if (appState.bubbleChartInstance) {
+        appState.bubbleChartInstance.destroy();
+      }
+
+      const chartDatasets = activeDataset.map(item => ({
+        label: item.section,
+        data: [{ x: item.x, y: item.y, r: item.r }],
+        backgroundColor: item.bg,
+        borderColor: item.border,
+        borderWidth: 2,
+        clip: false, // Guarantees bubbles on the edges are not cut off
+        hoverRadius: item.r + 4,
+        extraMeta: item
+      }));
+
+      appState.bubbleChartInstance = new Chart(ctx, {
+        type: 'bubble',
+        data: {
+          datasets: chartDatasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 30,
+              bottom: 25,
+              left: 25,
+              right: 35
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                boxWidth: 12,
+                boxHeight: 12,
+                font: { family: 'Inter', size: 11, weight: '700' },
+                color: '#1e293b'
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(15, 23, 42, 0.96)',
+              titleFont: { size: 12, weight: 'bold' },
+              bodyFont: { size: 11 },
+              padding: 12,
+              cornerRadius: 10,
+              borderWidth: 1,
+              borderColor: '#4c1d95',
+              callbacks: {
+                title: function(items) {
+                  return items[0].dataset.label;
+                },
+                label: function(context) {
+                  const meta = context.dataset.extraMeta;
+                  return [
+                    `Rango de Edad: ${meta.ageLabel}`,
+                    `Meta Numérica: ${meta.y} personas`,
+                    `Relevancia: ${meta.urgency}`,
+                    `Detalle: ${meta.desc}`
+                  ];
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: viewType === 'secciones' ? 'Edad Promedio de la Sección (Años)' : 'Enfoque de Edad Promedio',
+                font: { weight: '700', size: 12, family: 'Inter' },
+                color: '#334155'
+              },
+              min: 4,
+              max: 34, // Broad margins so bubbles never reach canvas boundary
+              ticks: {
+                stepSize: 5,
+                color: '#64748b',
+                font: { weight: '600' }
+              },
+              grid: { color: 'rgba(226, 232, 240, 0.7)' }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Meta Cuantitativa de Incorporación',
+                font: { weight: '700', size: 12, family: 'Inter' },
+                color: '#334155'
+              },
+              min: 2,
+              max: 18, // Generous upper margin preventing text/circle clipping
+              ticks: {
+                stepSize: 2,
+                color: '#64748b',
+                font: { weight: '600' }
+              },
+              grid: { color: 'rgba(226, 232, 240, 0.7)' }
+            }
+          }
+        }
+      });
+    }
+
+    function calculateSimulator() {
+      const invitados = parseInt(document.getElementById('slider-invitados').value);
+      const tasa = parseInt(document.getElementById('slider-tasa').value);
+
+      document.getElementById('slider-invitados-val').textContent = `${invitados} invitados`;
+      document.getElementById('slider-tasa-val').textContent = `${tasa} %`;
+
+      const perEvent = Math.round(invitados / 3);
+      document.getElementById('sim-per-event').textContent = `~${perEvent} jóvenes / evento`;
+      document.getElementById('sim-contacts-needed').textContent = `${invitados} contactos en <48h`;
+
+      const resultadoMiembros = Math.round((invitados * tasa) / 100);
+      const membersDisplay = document.getElementById('sim-result-members');
+      const statusDisplay = document.getElementById('sim-result-status');
+
+      membersDisplay.textContent = resultadoMiembros;
+
+      if (resultadoMiembros >= 31) {
+        statusDisplay.textContent = `✓ Meta Cumplida (${resultadoMiembros} de 31-35 requeridos)`;
+        statusDisplay.className = "inline-block px-3 py-1 rounded-md text-[11px] font-bold bg-purple-700 text-white shadow-xs";
+      } else {
+        const faltantes = 31 - resultadoMiembros;
+        statusDisplay.textContent = `⚠️ Faltan ${faltantes} para meta mínima (31)`;
+        statusDisplay.className = "inline-block px-3 py-1 rounded-md text-[11px] font-bold bg-red-600 text-white shadow-xs";
+      }
+    }
+
+    window.onload = function() {
+      renderCalendar();
+      const defaultEvent = calendarEvents.find(e => e.day === 7 && e.month === 10);
+      if (defaultEvent) selectCalendarEvent(defaultEvent);
+      calculateSimulator();
+    };
+  </script>
+</body>
+</html>
